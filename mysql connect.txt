@@ -1,0 +1,11 @@
+<?php
+$polanczenie=mysqli_connect("localhost", "root", "", "szkola");
+
+$zapytanie="Select * from uczen";
+$wynik=mysqli_query($polanczenie, $zapytanie);
+while($wiersz=mysqli_fetch_array($wynik)){
+	echo $wiersz['imie']." ";
+	echo $wiersz['nazwisko']."<br>";
+}
+mysqli_close($polanczenie);
+?>
